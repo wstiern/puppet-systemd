@@ -1,0 +1,177 @@
+[Unit]
+<% if @unit_description -%>
+Description=<%= @unit_description.to_s %>
+<% end -%>
+
+<% if @unit_documentation -%>
+Documentation=<% @unit_documentation.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @unit_after -%>
+After=<% @unit_after.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @cond_path_exists -%>
+ConditionPathExists=<%= @cond_path_exists.to_s-%>
+<% end -%>
+
+<% if @unit_requires -%>
+Requires=<% @unit_requires.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @unit_wants -%>
+Wants=<% @unit_wants.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @unit_conflicts -%>
+Conflicts=<% @unit_conflicts.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @unit_defaultdependencies -%>
+DefaultDependencies=<%= @unit_defaultdependencies.to_s %>
+<% end -%>
+
+<% if @unit_bindsto -%>
+BindsTo=<% @unit_bindsto.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @unit_type == "service" -%>
+[Service]
+<% if @service_type -%>
+Type=<%= @service_type.to_s %>
+<% end -%>
+<% if @service_type == "dbus" && @service_busname -%>
+Busname=<%= @service_busname.to_s %>
+<% end -%>
+<% if @service_remainafterexit -%>
+RemainAfterExit=<%= @service_remainafterexit.to_s %>
+<% end -%>
+<% if @service_guessmainpid -%>
+GuessMainPID=<%= @service_guessmainpid.to_s %>
+<% end -%>
+<% if @service_pidfile -%>
+PIDFile=<%= @service_pidfile.to_s %>
+<% end -%>
+
+<% if @environment -%>
+Environment=<% @environment.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @syslog_identifier -%>
+SyslogIdentifier=<% @syslog_identifier.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @work_directory -%>
+WorkingDirectory=<% @work_directory.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% if @service_execstart -%>
+ExecStart=<%= @service_execstart.to_s %>
+<% end -%>
+
+<% if @service_execstartpre -%>
+ExecStartPre=<%= @service_execstartpre.to_s %>
+<% end -%>
+
+<% if @service_execstartpost -%>
+ExecStartPost=<%= @service_execstartpost.to_s %>
+<% end -%>
+
+<% if @service_execstop -%>
+ExecStop=<%= @service_execstop.to_s %>
+<% end -%>
+<% if @service_execstoppost -%>
+ExecStopPost=<%= @service_execstoppost.to_s %>
+<% end -%>
+<% if @service_execreload -%>
+ExecReload=<%= @service_execreload.to_s %>
+<% end -%>
+<% if @service_restart -%>
+Restart=<%= @service_restart.to_s %>
+<% end -%>
+<% if @service_restartsec -%>
+RestartSec=<%= @service_restartsec.to_s %>
+<% end -%>
+<% if @service_timeoutstartsec -%>
+TimeoutStartSec=<%= @service_timeoutstartsec.to_s %>
+<% end -%>
+<% if @service_timeoutstopsec -%>
+TimeoutStopSec=<%= @service_timeoutstopsec.to_s %>
+<% end -%>
+<% if @service_timeoutsec -%>
+TimeoutSec=<%= @service_timeoutsec.to_s %>
+<% end -%>
+<% if @user -%>
+User=<%= @user.to_s %>
+<% end -%>
+<% if @group -%>
+Group=<%= @group.to_s %>
+<% end -%>
+<% if @service_runtimemaxsec -%>
+RuntimeMaxSec=<%= @service_runtimemaxsec.to_s %>
+<% end -%>
+<% if @service_watchdogsec -%>
+WatchdogSec=<%= @service_watchdogsec.to_s %>
+<% end -%>
+<% if @service_successexitstatus -%>
+SuccessExitStatus=<%= @service_successexitstatus.to_s %>
+<% end -%>
+<% if @service_restartpreventexitstatus -%>
+RestartPreventExitStatus=<%= @service_restartpreventexitstatus.to_s %>
+<% end -%>
+<% if @service_restartforceexitstatus -%>
+RestartForceExitStatus=<%= @service_restartforceexitstatus.to_s %>
+<% end -%>
+<% if @service_permissionsstartonly -%>
+PermissionsStartOnly=<%= @service_permissionsstartonly.to_s %>
+<% end -%>
+<% if @service_rootdirectorystartonly -%>
+RootDirectoryStartOnly=<%= @service_rootdirectorystartonly.to_s %>
+<% end -%>
+<% if @service_nonblocking -%>
+NonBlocking=<%= @service_nonblocking.to_s %>
+<% end -%>
+<% if @service_notifyaccess -%>
+NotifyAccess=<%= @service_notifyaccess.to_s %>
+<% end -%>
+<% if @service_sockets -%>
+Sockets=<% @service_sockets.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+<% if @service_failureaction -%>
+FailureAction=<%= @service_failureaction.to_s %>
+<% end -%>
+<% if @service_filedescriptorstoremax -%>
+FileDescriptorStoreMax=<%= @service_filedescriptorstoremax.to_s %>
+<% end -%>
+<% if @service_usbfunctiondescriptors -%>
+USBFunctionDescriptors=<%= @service_usbfunctiondescriptors.to_s %>
+<% end -%>
+<% if @service_usbfunctionstrings -%>
+USBFunctionStrings=<%= @service_usbfunctionstrings.to_s %>
+<% end -%>
+<% if @service_standardoutput -%>
+StandardOutput=<%= @service_standardoutput.to_s %>
+<% end -%>
+<% if @service_standarderror -%>
+StandardError=<%= @service_standarderror.to_s %>
+<% end -%>
+
+[Install]
+<% if @install_alias -%>
+Alias=<%= @install_alias.to_s %>
+<% end -%>
+<% if @install_requiredby -%>
+RequiredBy=<% @install_requiredby.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+<% if @install_wantedby -%>
+WantedBy=<% @install_wantedby.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+<% if @install_also -%>
+Also=<% @install_also.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+<% if @install_defaultinstance -%>
+DefaultInstance=<% @install_defaultinstance.each do |val| -%><%= val %> <% end -%>
+<% end -%>
+
+<% # end if service -%>
+<% end -%>
